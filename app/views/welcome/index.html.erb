@@ -1,13 +1,15 @@
 <h1>Address Book</h1>
 
-<%= image_tag("contacts.PNG", :alt => "Contacts Image") %>
+<center>
+<%= image_tag("contacts4.png", :alt => "Contacts Image", :class => "contact_Pic") %>
+</center>
 
+<center>
 <%= form_for :welcome do |f| %>
     <p>
-        <%= f.button :Create_Account %>
-    </p>
+        <%= f.button :Create_Account, :class => "button" %>
     
-    <p>
-        <%= f.button :Log_In %>
+        <%= f.button :Log_In, :class => "button" %>
     </p>
-    <% end %>
+<% end %>
+</center>
