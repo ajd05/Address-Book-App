@@ -14,3 +14,9 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+$("li a").click(function(event){
+    event.preventDefault();
+    var id = $(this).attr("href");
+    var divPosition = $(id).offset().left;
+    $("html, body").animate({scrollLeft: divPosition});
+});
