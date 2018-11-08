@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'contacts/index'
+  get 'contacts/home'
   get 'contacts/create'
   get 'welcome/index'
 
