@@ -1,0 +1,23 @@
+// Place all the styles related to the Account controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+fieldset {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: .5em;
+}
+legend {
+    color: blue;
+    font-weight: bold;
+    font-size: 85%;
+    margin-bottom: .5em;
+}
+label {
+	float: left;
+    width: 90px;
+}
+input, select {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: .5em;
+}

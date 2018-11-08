@@ -7,9 +7,9 @@
 <center>
 <%= form_for :welcome do |f| %>
     <p>
-        <%= f.submit 'Create Account', :class => "button" %>
+        <%= link_to '<button type="button", button style="height:75px;width:200px" >Create Account</button>'.html_safe, account_createAccount_url %>
     
-        <%= f.submit 'Log In', :class => "button" %>
+        <%= link_to '<button type="button", button style="height:75px;width:200px" >Log In</button>'.html_safe, account_logIn_url %>
     </p>
 <% end %>
 </center>
