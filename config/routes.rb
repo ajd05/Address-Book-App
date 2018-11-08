@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'account/createAccount'
   get 'account/logIn'
   get 'contacts/index'
+  get 'contacts/home'
   get 'contacts/create'
   get 'welcome/index'
 
