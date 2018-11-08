@@ -37,6 +37,8 @@
 
 .newContact {
     text-indent: 50px;
+    padding: 50px;
+    padding-top: 0px;
 }
 
 /* Add a black background color to the top navigation bar */
@@ -64,4 +66,25 @@
     top: 40px;
     left: 8px;
     right: 8px;
+}
+
+fieldset {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: .5em;
+}
+legend {
+    color: blue;
+    font-weight: bold;
+    font-size: 85%;
+    margin-bottom: .5em;
+}
+label {
+	float: left;
+    width: 90px;
+}
+input, select {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: .5em;
 }

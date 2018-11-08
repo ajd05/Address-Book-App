@@ -33,9 +33,9 @@
     
     
 <div class='newContact'>
-<%= form_for :welcome do |f| %>
+<%= form_for :contacts do |f| %>
     <p>
-        <%= f.submit 'Create New Contact', :class => "button" %>
+        <%= link_to '<button type="button", button style="height:75px;width:200px">Create New Contact</button>'.html_safe, contacts_create_url %>
     </p>
 <% end %>
 </div>
