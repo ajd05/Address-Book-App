@@ -32,19 +32,29 @@
     
     
 <div class='newContact'>
-<%= form_for :contacts do |f| %>
+
     <p>
-        <%= link_to '<button type="button", button style="height:75px;width:200px">Create New Contact</button>'.html_safe, contacts_create_url %>
+      <%= link_to 'Create New Contact', contacts_new_url %>
     </p>
-<% end %>
+
 </div>
 
 <div class="topnav">
   <input type="text" placeholder="Search..">
 </div>
-
+<center>
 <h1 class="title">Contacts List</h1>
-
-<iframe height="750px" width="94%" name="iframe_a" class="contactFrame"></iframe>
-
+<h2>Contacts</h2>
+<% current_user.contacts.each do |contact| %>
+  <p>
+    <strong>Name:</strong>
+    <%= contact.name %>
+  </p>
+ 
+  <p>
+    <strong>Email:</strong>
+    <%= contact.email %>
+  </p>
+<% end %>
+</center>
 </body>
