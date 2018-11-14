@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get 'account/logIn'
   get 'contacts/index'
   get 'contacts/home'
+  get 'contacts/create'
   get 'contacts/new'
+  get 'contacts/delete'
+  get 'contacts/edit'
+  get 'contacts/show'
   get 'welcome/index'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')

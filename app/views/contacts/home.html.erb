@@ -44,6 +44,8 @@
 </div>
 <center>
 <h1 class="title">Contacts List</h1>
+
+<div class="contactContainer">
 <h2>Contacts</h2>
 <% current_user.contacts.each do |contact| %>
   <p>
@@ -55,6 +57,15 @@
     <strong>Email:</strong>
     <%= contact.email %>
   </p>
+  
+      <tr>
+      <td><%= link_to 'Show', contact_path(contact) %></td>
+      <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+      <td><%= link_to 'Destroy', [contact.user, contact],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
 <% end %>
 </center>
 </body>
+</div>
