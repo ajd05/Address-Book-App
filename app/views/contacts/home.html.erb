@@ -40,6 +40,7 @@
 </div>
 
 <div class="topnav">
+  <%= link_to "Sign out", signout_path, id: "sign_out" %>
   <input type="text" placeholder="Search..">
 </div>
 <center>
@@ -60,7 +61,7 @@
       ||
       <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
       ||
-      <td><%= link_to 'Destroy', [contact.user, contact],
+      <td><%= link_to 'Delete', [contact.user, contact],
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>
