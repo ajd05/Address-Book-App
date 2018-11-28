@@ -1,34 +1,6 @@
 // Place all the styles related to the Contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-/* The sidebar menu */
-.sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 50px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: white; 
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 10px;
-}
-
-/* The navigation menu links */
-.sidenav a {
-    padding: 2px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: black;
-    display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: blue;
-}
-
 /* Style page content */
 .main {
     margin-left: 50px; /* Same as the width of the sidebar */
@@ -47,6 +19,8 @@
     position: absolute;
     top: 25px;
     right: 16px;
+    padding-right: 8em;
+    font-size: 20px;
 }
 
 
@@ -93,4 +67,28 @@ input, select {
     background-color: beige;
     margin-left: 8em;
     margin-right: 8em;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 25px;
+    margin-top: 120px;
+}
+
+#myUL {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+#myUL li a:hover:not(.header) {
+    background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+button{
+    text-decoration: none;
+}
+
+p{
+    font-size: 20px;
 }

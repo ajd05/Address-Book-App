@@ -1,62 +1,36 @@
 <body>
-   
-<!-- Side navigation -->
-<div class="sidenav">
-  <a href="#">A</a>
-  <a href="#">B</a>
-  <a href="#">C</a>
-  <a href="#">D</a>
-  <a href="#">E</a>
-  <a href="#">F</a>
-  <a href="#">G</a>
-  <a href="#">H</a>
-  <a href="#">I</a>
-  <a href="#">J</a>
-  <a href="#">K</a>
-  <a href="#">L</a>
-  <a href="#">M</a>
-  <a href="#">N</a>
-  <a href="#">O</a>
-  <a href="#">P</a>
-  <a href="#">Q</a>
-  <a href="#">R</a>
-  <a href="#">S</a>
-  <a href="#">T</a>
-  <a href="#">U</a>
-  <a href="#">V</a>
-  <a href="#">W</a>
-  <a href="#">X</a>
-  <a href="#">Y</a>
-  <a href="#">Z</a>
-</div>
-    
-    
-<div class='newContact'>
-
-    <p>
-      <%= link_to 'Create New Contact', contacts_new_url %>
-    </p>
-
-</div>
-
 <div class="topnav">
   <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <input type="text" placeholder="Search..">
 </div>
 <center>
 <h1 class="title">Contacts List</h1>
 
 <div class="contactContainer">
 <h2>Contacts</h2>
+<td>
+  <tr>
+    <tc>
+      <button>
+      <%= link_to 'Create New Contact', contacts_new_url %>
+      </button>
+    </tc>
+    <tc>
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..">
+    </tc>
+  </tr>
+</td>
+<ul id="myUL">
 <% current_user.contacts.order("name ASC").each do |contact| %>
-  <p>
+  <li>
+    <p>
     <strong>Name:</strong>
     <%= contact.name %>
     ||
     <strong>Email:</strong>
     <%= contact.email %>
+    
     ||
-      <tr>
+     
       <td><%= link_to 'Show', contact_path(contact) %></td>
       ||
       <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
@@ -65,8 +39,10 @@
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>
-    </p>
+    </li>
 <% end %>
+</p>
+</ul>
 </center>
 </body>
 </div>
