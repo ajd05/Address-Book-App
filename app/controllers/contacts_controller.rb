@@ -2,37 +2,43 @@ class ContactsController < ApplicationController
   def index
     @user = User.all
   end
+  
+  def new
+    @user = User.new
+  end
+  
   def create
-    @user = User.find(session[:user_id])
-    @contact = @user.contacts.create(contact_params)
-    redirect_to contacts_home_url(@contact)
+    @user = User.new(contact_params)
+    
+    if @user.save
+      redirect_to @user
+    else 
+      render 'new'
+    end
   end
   
   def show
-        @user = User.find(session[:user_id])
-        @contact = @user.contacts.find(params[:id])
+        @user = User.find(params[:id])
   end
   
-    def destroy
-        @user = User.find(session[:user_id])
-        @contact = @user.contacts.find(params[:id])
-        @contact.destroy
-        redirect_to contacts_home_url
-    end
+  def destroy
+      @user = User.find(params[:id])
+      @user.destroy
+      redirect_to contacts_home_url
+  end
     
-    def edit
-        @user = User.find(session[:user_id])
-        @contact = @user.contacts.find(params[:id])
-    end
-    def update
-        @user = User.find(session[:user_id])
-        @contact = @user.contacts.find(params[:id])
-        if @contact.update(contact_params)
-            redirect_to @contact
-        else
-            render 'edit'
-        end
-    end
+  def edit
+      @user = User.find(params[:id])
+  end
+  
+  def update
+      @user = User.find(params[:id])
+      if @user.update(contact_params)
+          redirect_to @user
+      else
+          render 'edit'
+      end
+  end
   
   private
     def contact_params
