@@ -10,12 +10,8 @@ Rails.application.routes.draw do
   get 'contacts/edit'
   get 'contacts/show'
   get 'welcome/index'
-  get 'auth/:provider/callback', to: 'sessions#create'
-  get 'auth/failure', to: redirect('/')
-  get 'signout', to: 'sessions#destroy'
   get 'contacts/provideInfo'
   
-  resources :sessions, only: [:create, :destroy]
   
   resources :contacts 
   

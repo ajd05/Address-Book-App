@@ -3,17 +3,3 @@
 <center>
 <%= image_tag("contacts4.png", :alt => "Contacts Image", :class => "contact_Pic") %>
 </center>
-
-<center>
-    <% if !current_user %>
-<%= form_for :welcome do |f| %>
-    <p>
-        <%= link_to '<button type="button", button style="height:75px;width:400px" >Log In</button>'.html_safe, account_logIn_url %>
-    </p>
-<% end %>
-    <% else %>
-        <script type="text/javascript">
-            window.location.href="/contacts/home"  // put your correct path in a string here
-        </script>
-    <% end %>
-</center>
