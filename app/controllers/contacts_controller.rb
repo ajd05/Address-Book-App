@@ -1,4 +1,7 @@
 class ContactsController < ApplicationController
+  def index
+    @user = User.all
+  end
   def create
     @user = User.find(session[:user_id])
     @contact = @user.contacts.create(contact_params)
