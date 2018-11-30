@@ -11,7 +11,7 @@ Scenario: As a address book user I want to be able to create a new contact and s
     When I click on the "Create New Contact" button
     Then I should be on the "Add a New User" page
     Then I enter "Matthew Frazier" into the "name" text field
-    When I click on the "Create User" button
+    When I click on the "Create User" <p> submit
     Then I should see "Matthew Frazier"
     When I click on the "Users List" link
     Then I should be on the "Contacts List" page
