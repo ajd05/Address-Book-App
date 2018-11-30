@@ -1,5 +1,5 @@
 <h1>Add a New Contact</h1>
-<%= form_for([current_user, current_user.contacts.build]) do |f| %>
+<%= form_for @contact do |f| %>
     <p>
         <%= f.label :name %><br>
         <%= f.text_field :name %>
@@ -24,6 +24,6 @@
         <%= f.submit %>
     </p>
     <p>
-        <%= link_to 'Back', contacts_home_url %>
+        <%= link_to 'Back', new_contact_path %>
     </p>
 <% end %>

@@ -8,7 +8,7 @@
   <tr>
     <tc>
       <button>
-      <%= link_to 'Create New Contact', contacts_new_url %>
+      <%= link_to 'Create New Contact', new_contact_path %>
       </button>
     </tc>
     <tc>
@@ -17,7 +17,7 @@
   </tr>
 </td>
 <ul id="myUL">
-<% current_user.contacts.order("name ASC").each do |contact| %>
+<% @contact.order("name ASC").each do |contact| %>
   <li>
     <p>
     <strong>Name:</strong>

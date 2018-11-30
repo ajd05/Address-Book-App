@@ -1,18 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/create'
-  get 'sessions/destroy'
-  get 'account/logIn'
-  get 'contacts/index'
-  get 'contacts/home'
-  get 'contacts/create'
-  get 'contacts/new'
-  get 'contacts/delete'
-  get 'contacts/edit'
-  get 'contacts/show'
-  get 'welcome/index'
-  get 'contacts/provideInfo'
-  
-  
   resources :contacts 
   
   resources :users do
