@@ -8,7 +8,7 @@
   <tr>
     <tc>
       <button>
-      <%= link_to 'Create New Contact', new_contact_path %>
+      <%= link_to 'Create New Contact', new_user_path %>
       </button>
     </tc>
     <tc>
@@ -17,22 +17,18 @@
   </tr>
 </td>
 <ul id="myUL">
-<% @contact.order("name ASC").each do |contact| %>
+<% @user.order("name ASC").each do |user| %>
   <li>
     <p>
     <strong>Name:</strong>
-    <%= contact.name %>
-    ||
-    <strong>Email:</strong>
-    <%= contact.email %>
-    
+    <%= user.name %>
     ||
      
-      <td><%= link_to 'Show', contact_path(contact) %></td>
+      <td><%= link_to 'Show', user_path(user) %></td>
       ||
-      <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+      <td><%= link_to 'Edit', edit_user_path(user) %></td>
       ||
-      <td><%= link_to 'Delete', [contact.user, contact],
+      <td><%= link_to 'Delete', user_path(user),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>
