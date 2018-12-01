@@ -28,3 +28,18 @@ Scenario: As a address book user I want to be able to view a contact that was cr
     Then I will click on "Users List" link
     
       And I should see "Matt" name
+      
+      
+Scenario: As a address book user I want to be able to edit a contact that was created
+    Given I am in the Add New User Page
+    
+    When I enter "Matt" field
+      And I click on the "Create User" button
+    Then I will click on "Users List" link
+    
+    Then I will click on "Edit" link
+      And I enter "Matthew" field
+      And I click on the "Update User" button
+    Then I will click on "Users List" link
+    
+    Then I should see "Matthew" name
