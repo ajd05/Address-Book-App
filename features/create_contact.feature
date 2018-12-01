@@ -23,10 +23,8 @@ Scenario: As a address book user I want to be able to view a contact that was cr
       And I click on the "Create User" button
     Then I will click on "Users List" link
     
-    When I'm in the "Contacts List" page
     Then I will click on "Show" link
       And I should see "Matt" name
     Then I will click on "Users List" link
     
-    When I'm in the "Contacts List" page
-    Then I should see "Matt" name
+      And I should see "Matt" name
