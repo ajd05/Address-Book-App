@@ -15,3 +15,18 @@ Scenario: As a address book user I want to be able to create a new contact and s
     
     When I'm in the "Contacts List" page
     Then I should see "Matt" name
+    
+Scenario: As a address book user I want to be able to view a contact that was created
+    Given I am in the Add New User Page
+    
+    When I enter "Matt" field
+      And I click on the "Create User" button
+    Then I will click on "Users List" link
+    
+    When I'm in the "Contacts List" page
+    Then I will click on "Show" link
+      And I should see "Matt" name
+    Then I will click on "Users List" link
+    
+    When I'm in the "Contacts List" page
+    Then I should see "Matt" name
