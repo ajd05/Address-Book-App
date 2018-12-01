@@ -43,3 +43,15 @@ Scenario: As a address book user I want to be able to edit a contact that was cr
     Then I will click on "Users List" link
     
     Then I should see "Matthew" name
+    
+    
+Scenario: As a address book user I want to be able to delete a contact that was created
+    Given I am in the Add New User Page
+    
+    When I enter "Matt" field
+      And I click on the "Create User" button
+    Then I will click on "Users List" link
+    
+    Then I will click on "Delete" link
+      And I click on the "OK" button
+    Then I should see no content
