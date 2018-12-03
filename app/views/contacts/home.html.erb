@@ -1,48 +1,59 @@
 <body>
-<div class="topnav">
-  <%= link_to "Sign out", signout_path, id: "sign_out" %>
-</div>
 <center>
-<h1 class="title">Contacts List</h1>
+
+<header class="sticky">
+  <table class="headerNav">
+    <tr>
+      <td class="headerLeft">
+        <%= link_to 'Create New Contact', contacts_new_url, class: "btn", style: "height:15px;width:150px" %>
+      </td>
+      <td class="headerMid">
+      <h1 class="title"> Contacts List</h1>
+      </td>
+      <td class="headerRight">
+        <%= link_to "Sign out", signout_path, id: "sign_out", class: "btn", style: "height:15px;width:150px" %>
+      </td>
+    </tr>
+
+  </table>
+</header>
 
 <div class="contactContainer">
 <h2>Contacts</h2>
 <td>
   <tr>
     <tc>
-      <button>
-      <%= link_to 'Create New Contact', contacts_new_url %>
-      </button>
-    </tc>
-    <tc>
       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..">
     </tc>
   </tr>
 </td>
 <ul id="myUL">
+  <table id ="myTable">
 <% current_user.contacts.order("name ASC").each do |contact| %>
   <li>
-    <p>
-    <strong>Name:</strong>
-    <%= contact.name %>
-    ||
-    <strong>Email:</strong>
-    <%= contact.email %>
+      <tr>
+        <p>
+          <td class="nameColumn">
+            <strong>Name:</strong>
+            <%= contact.name %>
+          </td>
     
-    ||
+          <td class="emailColumn">
+            <strong>Email:</strong>
+            <%= contact.email %>
+          </td>
      
-      <td><%= link_to 'Show', contact_path(contact) %></td>
-      ||
-      <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-      ||
-      <td><%= link_to 'Delete', [contact.user, contact],
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    </li>
+          <td class="showColumn"><%= link_to 'Show', contact_path(contact) , class: "btn"%></td>
+          <td class="editColumn"><%= link_to 'Edit', edit_contact_path(contact), class: "btn"%></td>
+          <td class="deleteColumn"><%= link_to 'Delete', [contact.user, contact],
+                method: :delete,
+                data: { confirm: 'Are you sure?' }, class: "btn"%></td>
+        </p>
+      </tr>
+  </li>
 <% end %>
-</p>
+</table>
 </ul>
 </center>
-</body>
 </div>
+</body>
