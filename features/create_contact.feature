@@ -53,5 +53,4 @@ Scenario: As a address book user I want to be able to delete a contact that was 
     Then I will click on "Users List" link
     
     Then I will click on "Delete" link
-      And I click on the "OK" button
-    Then I should see no content
+    Then I should not see "Matt" name
